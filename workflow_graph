@@ -1,0 +1,14 @@
+// LangGraph Workflow
+digraph {
+	__start__
+	categorize_mail
+	draft_mail
+	schedule_mail
+	read_mail
+	__end__
+	categorize_mail -> draft_mail
+	read_mail -> categorize_mail
+	__start__ -> read_mail
+	schedule_mail -> __end__
+	draft_mail -> schedule_mail
+}
